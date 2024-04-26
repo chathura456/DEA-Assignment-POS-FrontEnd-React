@@ -1,0 +1,83 @@
+
+
+
+.main-content {
+    display: flex;
+    justify-content: center; /* This should center the content horizontally */
+    align-items: center; /* This centers the content vertically */
+    height: 100vh;
+    width: calc(100% - 250px); /* Assuming the side panel is 250px wide */
+    margin-left: 250px; /* Adjust based on your side panel's width */
+    text-align: center; /* This ensures the text inside the container is centered */
+  }
+  
+  .main-content h1 {
+    margin: 0; /* Remove any default margins from the h1 */
+    width: 100%; /* Make the h1 take the full width of its container */
+  }
+
+  .main-cont {
+    margin-left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    display: flex;              /* Added this line */
+    flex-direction: column;     /* Added this line */
+    justify-content: center;    /* Added this line */
+    align-items: center;        /* Added this line */
+    position: relative;         /* Added this line to ensure ::before works correctly */
+  }
+  
+  .main-cont::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("https://toppossystem.com/wp-content/uploads/2019/08/pos-system.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #EEEEEE;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  
+
+.aspect-ratio-card::before {
+  content: "";
+  display: block;
+  padding-top: 66.66%; /* 2/3 * 100% = 66.66% */
+  width: 100%;
+}
+
+.aspect-ratio-card {
+  position: relative;
+  border-radius: 20px;
+}
+
+.aspect-ratio-card .card-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.centered-title { /* Adjust as needed */
+  padding-bottom: 20px;  /* Adjust as needed */
+}
+
+/* New styles for centering card content */
+.card-content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;  /* Take full height of the card */
+}
+
+.card-title {
+  font-weight: bold;       /* Make the title bold */
+  font-size: 1.5rem;       /* Increase the font size; adjust as needed */
+}
+  
