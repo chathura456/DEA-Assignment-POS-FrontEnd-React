@@ -5,42 +5,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./SidePanel.css";
 
-/*
-const SidePanel = () => {
-  return (
-    <div className="side-panel">
-      <h1 className="website-name">Self Checkout</h1>
-      <div className="buttons-section">
-        <MDBBtn block color="primary" className="mb-2">
-          <MDBIcon fas icon="tachometer-alt" className="me-2" />
-          Dashboard
-        </MDBBtn>
-        <MDBBtn block color="primary" className="mb-2">
-          <MDBIcon fas icon="box" className="me-2" />
-          Products
-        </MDBBtn>
-        <MDBBtn block color="primary" className="mb-2">
-          <MDBIcon fas icon="shopping-cart" className="me-2" />
-          Orders
-        </MDBBtn>
-        <MDBBtn block color="primary" className="mb-2">
-          <MDBIcon fas icon="users" className="me-2" />
-          Customers
-        </MDBBtn>
-      </div>
-      <div className="logout-section">
-        <MDBBtn block color="danger">
-          <MDBIcon fas icon="sign-out-alt" className="me-2" />
-          Log Out
-        </MDBBtn>
-      </div>
-    </div>
-  );
-};
-
-export default SidePanel;
-*/
-
 const SidePanel = () => {
   const [activeRoute, setActiveRoute] = useState(window.location.pathname);
   const [isHovered, setIsHovered] = useState(false);
@@ -168,6 +132,11 @@ const SidePanel = () => {
           <MDBBtn
             block
             color={activeRoute === "/discount" ? "white" : "green"}
+
+        <NavLink to="/allsupplier" activeClassName="selected-button">
+          <MDBBtn
+            block
+            color={activeRoute === "/allsupplier" ? "white" : "green"}
             className="p-3 mb-2 align-left custom-btn-color"
             style={{
               boxShadow: "none",
@@ -189,6 +158,23 @@ const SidePanel = () => {
           >
             <MDBIcon fas icon="users" className="me-2 ms-2" />
             Discounts
+                activeRoute === "/allsupplier"
+                  ? "#000"
+                  : hoverStates["/allsupplier"]
+                  ? "#000"
+                  : "#fff",
+            }
+            }
+            onClick={() => setActiveRoute("/allsupplier")}
+            onMouseEnter={() =>
+              setHoverStates((prev) => ({ ...prev, "/allsupplier": true }))
+            }
+            onMouseLeave={() =>
+              setHoverStates((prev) => ({ ...prev, "/allsupplier": false }))
+            }
+          >
+            <MDBIcon fas icon="truck" className="me-2 ms-2" />
+            Suppliers
           </MDBBtn>
         </NavLink>
       </div>

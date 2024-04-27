@@ -12,6 +12,9 @@ import Product from "./pages/Products/Product";
 import AddUser from "./pages/AddUser/AddUser";
 import AddDiscount from "./pages/AddDiscount/AddDiscount";
 import Discount from "./pages/Discount/Discount";
+import Supplier from "./pages/Supplier/Supplier";
+import Suppliers from "./pages/Supplier/Supplier";
+import AddSupplier from "./pages/AddSupplier/AddSupplier";
 
 const MainContent = () => {
   const location = useLocation();
@@ -25,6 +28,8 @@ const MainContent = () => {
     "/discount",
     "/addDiscount"
 
+    "/allsupplier",
+    "/AddSupplier"
   ].includes(location.pathname);
 
   return (
@@ -41,6 +46,8 @@ const MainContent = () => {
           <Route path="/addUser" element={<AddUser />} />
           <Route path="/discount" element={<Discount/>} />
           <Route path="/addDiscount" element={<AddDiscount />} />
+          <Route path="/allsupplier" element={<Suppliers />}/>
+          <Route path="/AddSupplier" element={<AddSupplier />}/>
         </Routes>
       </main>
     </>
