@@ -9,7 +9,9 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Login/Login";
 import Order from "./pages/Orders/Order";
 import Product from "./pages/Products/Product";
-import AddUser from "./pages/AddUser/AddUser"
+import AddUser from "./pages/AddUser/AddUser";
+import AddDiscount from "./pages/AddDiscount/AddDiscount";
+import Discount from "./pages/Discount/Discount";
 
 const MainContent = () => {
   const location = useLocation();
@@ -19,7 +21,10 @@ const MainContent = () => {
     "/customer",
     "/product",
     "/order",
-    "/addUser"
+    "/addUser",
+    "/discount",
+    "/addDiscount"
+
   ].includes(location.pathname);
 
   return (
@@ -34,6 +39,8 @@ const MainContent = () => {
           <Route path="/product" element={<Product />} />
           <Route path="/order" element={<Order />} />
           <Route path="/addUser" element={<AddUser />} />
+          <Route path="/discount" element={<Discount/>} />
+          <Route path="/addDiscount" element={<AddDiscount />} />
         </Routes>
       </main>
     </>
