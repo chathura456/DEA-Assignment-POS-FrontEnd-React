@@ -60,7 +60,7 @@ function Suppliers() {
         // Handle success
         console.log(`Supplier ${id} deleted successfully.`);
         // Remove the deleted supplier from the state
-        setSuppliers(suppliers.filter(suppliers => supplier.id !== id));
+        setSuppliers(suppliers.filter(supplier => supplier.id !== id));
       } else {
         // Handle error
         console.error(`Failed to delete supplier ${id}.`);
