@@ -26,8 +26,7 @@ const MainContent = () => {
     "/order",
     "/addUser",
     "/discount",
-    "/addDiscount"
-
+    "/addDiscount",
     "/allsupplier",
     "/AddSupplier"
   ].includes(location.pathname);
