@@ -22,7 +22,7 @@ function AddUser() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8092/api/register", {
+      const response = await fetch("http://localhost:8092/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

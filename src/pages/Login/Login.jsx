@@ -28,7 +28,7 @@ function App() {
     };
 
     // Make the HTTP POST request
-    fetch("http://localhost:8092/api/login", {
+    fetch("http://localhost:8092/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function App() {
       fluid
       className="d-flex align-items-center"
       style={{
-        backgroundImage: `url("https://www.touchdynamic.com/wp-content/uploads/2019/04/all-in-one-pos-cornerstone.jpg")`,
+        backgroundImage: `url("/login.jpg")`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",

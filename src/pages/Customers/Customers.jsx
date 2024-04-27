@@ -9,7 +9,7 @@ function Customers() {
 
   useEffect(() => {
     // Fetch data from the endpoint
-    fetch("http://localhost:8092/api/all")
+    fetch("http://localhost:8092/user/all")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching data:", error));
@@ -21,7 +21,7 @@ function Customers() {
 
   const handleSave = () => {
     
-    fetch(`http://localhost:8092/api/users/${editUser.id}`, {
+    fetch(`http://localhost:8092/user/edit/${editUser.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ function Customers() {
         setEditUser(null); // Clear editUser after saving
   
         // Fetch updated user list and set it as state to refresh the table
-        fetch("http://localhost:8092/api/all")
+        fetch("http://localhost:8092/user/all")
           .then((response) => response.json())
           .then((data) => setUsers(data))
           .catch((error) => console.error("Error fetching data:", error));
@@ -52,7 +52,7 @@ function Customers() {
 
   const handleDelete = (id) => {
     // Implement delete functionality here
-    fetch(`http://localhost:8092/api/users/${id}`, {
+    fetch(`http://localhost:8092/user/delete/${id}`, {
       method: 'DELETE'
     })
     .then(response => {
