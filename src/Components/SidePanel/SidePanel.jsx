@@ -128,6 +128,10 @@ const SidePanel = () => {
             Users
           </MDBBtn>
         </NavLink>
+        <NavLink to="/discount" activeClassName="selected-button">
+          <MDBBtn
+            block
+            color={activeRoute === "/discount" ? "white" : "green"}
 
         <NavLink to="/allsupplier" activeClassName="selected-button">
           <MDBBtn
@@ -138,12 +142,29 @@ const SidePanel = () => {
               boxShadow: "none",
               border: "none",
               color:
+                activeRoute === "/discount"
+                  ? "#000"
+                  : hoverStates["/discount"]
+                  ? "#000"
+                  : "#fff",
+            }}
+            onClick={() => setActiveRoute("/discount")}
+            onMouseEnter={() =>
+              setHoverStates((prev) => ({ ...prev, "/discount": true }))
+            }
+            onMouseLeave={() =>
+              setHoverStates((prev) => ({ ...prev, "/discount": false }))
+            }
+          >
+            <MDBIcon fas icon="users" className="me-2 ms-2" />
+            Discounts
                 activeRoute === "/allsupplier"
                   ? "#000"
                   : hoverStates["/allsupplier"]
                   ? "#000"
                   : "#fff",
-            }}
+            }
+            }
             onClick={() => setActiveRoute("/allsupplier")}
             onMouseEnter={() =>
               setHoverStates((prev) => ({ ...prev, "/allsupplier": true }))
