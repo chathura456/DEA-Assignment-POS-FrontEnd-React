@@ -164,6 +164,34 @@ const SidePanel = () => {
             Users
           </MDBBtn>
         </NavLink>
+
+        <NavLink to="/allsupplier" activeClassName="selected-button">
+          <MDBBtn
+            block
+            color={activeRoute === "/allsupplier" ? "white" : "green"}
+            className="p-3 mb-2 align-left custom-btn-color"
+            style={{
+              boxShadow: "none",
+              border: "none",
+              color:
+                activeRoute === "/allsupplier"
+                  ? "#000"
+                  : hoverStates["/allsupplier"]
+                  ? "#000"
+                  : "#fff",
+            }}
+            onClick={() => setActiveRoute("/allsupplier")}
+            onMouseEnter={() =>
+              setHoverStates((prev) => ({ ...prev, "/allsupplier": true }))
+            }
+            onMouseLeave={() =>
+              setHoverStates((prev) => ({ ...prev, "/allsupplier": false }))
+            }
+          >
+            <MDBIcon fas icon="truck" className="me-2 ms-2" />
+            Suppliers
+          </MDBBtn>
+        </NavLink>
       </div>
 
       <div className="logout-section" activeClassName="selected-button">

@@ -9,7 +9,10 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Login/Login";
 import Order from "./pages/Orders/Order";
 import Product from "./pages/Products/Product";
-import AddUser from "./pages/AddUser/AddUser"
+import AddUser from "./pages/AddUser/AddUser";
+import Supplier from "./pages/Supplier/Supplier";
+import Suppliers from "./pages/Supplier/Supplier";
+import AddSupplier from "./pages/AddSupplier/AddSupplier";
 
 const MainContent = () => {
   const location = useLocation();
@@ -19,7 +22,9 @@ const MainContent = () => {
     "/customer",
     "/product",
     "/order",
-    "/addUser"
+    "/addUser",
+    "/allsupplier",
+    "/AddSupplier"
   ].includes(location.pathname);
 
   return (
@@ -34,6 +39,8 @@ const MainContent = () => {
           <Route path="/product" element={<Product />} />
           <Route path="/order" element={<Order />} />
           <Route path="/addUser" element={<AddUser />} />
+          <Route path="/allsupplier" element={<Suppliers />}/>
+          <Route path="/AddSupplier" element={<AddSupplier />}/>
         </Routes>
       </main>
     </>
